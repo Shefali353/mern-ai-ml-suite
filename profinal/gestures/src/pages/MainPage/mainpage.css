@@ -1,0 +1,135 @@
+/* ===== Soft Pastel Animated Background ===== */
+.main-container {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #ffe6e6, #f9d4ff, #d6e6ff, #fff5cc, #ffd6d6);
+  background-size: 600% 600%;
+  animation: pastelFlow 20s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Changed from center to flex-start */
+  padding: 30px 50px 50px; /* Reduced top padding */
+  transition: background 2s ease;
+}
+
+/* ===== Top-Center Animated Bubble Heading ===== */
+.page-heading {
+  font-size: 55px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px; /* Reduced margin */
+  margin-top: 30px; /* Added top margin */
+  letter-spacing: 3px;
+  width: 100%;
+
+  background: linear-gradient(
+    45deg,
+    #ff7eb3,
+    #ff758c,
+    #ffce76,
+    #8defff,
+    #a18cff
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  animation: headingFlow 6s ease infinite;
+  text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.25);
+}
+
+@keyframes headingFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===== Gradient Animation ===== */
+@keyframes pastelFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===== Card Container ===== */
+.card-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ===== Cards ===== */
+.card {
+  background-color: rgba(255, 255, 255, 0.25);
+  width: 320px;
+  height: 400px;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  color: #444;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Card Image Placeholder ===== */
+.card-img {
+  height: 200px;
+  background: rgba(255, 255, 255, 0.4);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  background-size: cover;
+  background-position: center;
+}
+
+/* ===== Card Text ===== */
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  margin: 10px 0;
+  color: #b865f0;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.card-content p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.video-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}

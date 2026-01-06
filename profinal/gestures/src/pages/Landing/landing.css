@@ -1,0 +1,102 @@
+/* ===== Fullscreen Background ===== */
+.landing-container {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: "Cinzel", serif;
+  color: #ff3b3b;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== Main Animated Title ===== */
+.landing-text {
+  font-size: 3.2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  margin-bottom: 9rem; /* ⬆ shifted up from popup area */
+  background: rgba(255, 255, 255, 0.18);
+  padding: 0.6rem 1.8rem;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 1s ease-in;
+  text-align: center;
+  color: #ff4d4d;
+}
+
+/* ===== Popup (Enter/Q Options) ===== */
+.landing-popup {
+  position: absolute;
+  bottom: 2rem; /* ⬆ slightly up so it doesn’t overlap */
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  text-align: center;
+  opacity: 0;
+  animation: popupFade 1s ease-in forwards;
+  animation-delay: 0.3s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.landing-popup p {
+  margin: 0.4rem 0;
+}
+
+.highlight {
+  color: #ff3b3b;
+  font-weight: bold;
+}
+
+/* ===== Press Start Text (Before Start) ===== */
+.press-start {
+  position: absolute;
+  bottom: 45%;
+  text-align: center;
+  color: white;
+  font-size: 1.6rem;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  animation: blink 2s infinite;
+  letter-spacing: 1px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}

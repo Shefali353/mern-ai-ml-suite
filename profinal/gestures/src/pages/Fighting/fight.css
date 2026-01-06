@@ -1,0 +1,409 @@
+   /* === Video Container === */
+.move-video-container {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background: transparent; /* NEW: Background transparent */
+}
+
+.move-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+ 
+}
+
+/* === Fullscreen layout, no scroll === */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* === Main container === */
+.character-page {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  position: fixed;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* === Blur Overlay === */
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 15;
+}
+
+/* === Start Screen === */
+.start-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #00e6ff;
+  z-index: 20;
+  text-shadow: 0 0 10px rgba(0, 230, 255, 0.6);
+}
+
+.start-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  animation: subtle-glow 3s infinite alternate;
+}
+
+.start-message {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  animation: gentle-pulse 3s infinite;
+}
+
+.start-submessage {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+@keyframes subtle-glow {
+  0% { 
+    text-shadow: 0 0 5px #00e6ff, 0 0 10px #00e6ff; 
+    transform: scale(1);
+  }
+  100% { 
+    text-shadow: 0 0 15px #00e6ff, 0 0 20px #00e6ff; 
+    transform: scale(1.02);
+  }
+}
+
+@keyframes gentle-pulse {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scale(0.98);
+  }
+}
+
+/* === Move Display (CENTER) === */
+.status-overlay {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00e6ff;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 230, 255, 0.8);
+  z-index: 10;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* === Power Bars === */
+.power-status {
+  position: absolute;
+  top: 40px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-weight: 700;
+  z-index: 35; /* Health bars ko higher z-index do */
+}
+
+.left-status {
+  left: 40px;
+  font-weight: 1000;
+}
+
+.right-status {
+  right: 30px;
+  font-weight: 1000;
+  flex-direction: row-reverse;
+}
+
+/* === Profile Icons === */
+.profile-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #00e6ff !important;
+  box-shadow: 0 0 15px rgba(0, 230, 255, 0.5) !important;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* === Health Bar === */
+.bar {
+  width: 200px;
+  height: 18px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.fill.strange {
+  background: linear-gradient(90deg, #00ffcc, #0077ff);
+}
+
+.fill.thanos {
+  background: linear-gradient(90deg, #ff0066, #ffcc00);
+}
+
+.percent {
+  min-width: 45px;
+  text-align: center;
+}
+
+/* === Info Box === */
+.info-box {
+  position: absolute;
+  top: 120px;
+  width: 230px;
+  background: #000000 !important; 
+  color: white;
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-size: 13px;
+  line-height: 1.50;
+  border: 2px solid #00e6ff !important; 
+  box-shadow: 0 0 15px rgba(0, 230, 255, 0.5) !important;
+  animation: fadeIn 0.3s ease forwards;
+  text-align: left;
+  z-index: 20; /* Info boxes ko health bars se neeche rakho */
+}
+
+.info-box h4 {
+  margin: 0 0 8px;
+  color: #00e6ff;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-box li {
+  margin: 5px 0;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* === Left Info === */
+.left-info {
+  left: 0;
+  transform: translateX(-10px);
+}
+
+/* === Right Info === */
+.right-info {
+  right: 0;
+  transform: translateX(10px);
+}
+
+/* === Characters at the bottom (FIXED) === */
+.character {
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+}
+
+.character.left {
+  margin-top: 170px;
+  left: 40px;
+  bottom: 0;
+}
+
+.character.right {
+  margin-top: 130px;
+  right: 40px;
+  bottom: 0;
+}
+
+.character.left img {
+  height: 500px;
+  user-select: none;
+  pointer-events: none;
+  transform: translateY(0);
+}
+
+.character.right img {
+  height: 570px;
+  user-select: none;
+  pointer-events: none;
+  transform: translateY(0);
+}
+
+/* === Turn Indicator === */
+.turn-indicator {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: #00e6ff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid rgba(0, 230, 255, 0.5) !important;
+  box-shadow: 0 0 15px rgba(0, 230, 255, 0.5) !important;
+  z-index: 20;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}    
+
+
+/* === Winner Popup Message === */
+.winner-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.5s ease;
+}
+
+.winner-message {
+  color: #00e6ff;
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(0, 230, 255, 0.9);
+  padding: 30px 50px;
+  border: 3px solid #00e6ff;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  animation: pulse-glow 1.5s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(0, 230, 255, 0.5);
+  }
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 230, 255, 0.9);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* === Ending Video Overlay === */
+.ending-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ending-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-skip-text {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  border-radius: 8px;
+  opacity: 0.8;
+  animation: fadeInOut 3s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}

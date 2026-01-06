@@ -1,0 +1,279 @@
+.about-page {
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  background: linear-gradient(
+    180deg,
+    rgba(240, 248, 255, 0.8),
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 249, 230, 0.9)
+  );
+  padding-bottom: 50px;
+}
+
+/* 🔹 Exit Button */
+.exit-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.exit-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #8b4513;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+}
+
+.exit-button a:hover {
+  background: #a0522d;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.4);
+}
+
+/* 🔹 Banner Section */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.banner-text h1 {
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+}
+
+.banner-text p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* 🔹 Project Overview */
+.project-overview {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  animation: slideUp 1s ease;
+}
+
+.project-overview h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #8b4513;
+  margin-bottom: 20px;
+}
+
+.project-overview p {
+  text-align: justify;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* 🔹 Developers Section */
+.developers {
+  max-width: 1100px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.developers h2 {
+  font-size: 2rem;
+  color: #8b4513;
+  margin-bottom: 40px;
+}
+
+.developer-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 20px;
+  width: 320px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.profile-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #8b4513;
+  margin-bottom: 15px;
+}
+
+.profile-card h3 {
+  font-size: 1.3rem;
+  color: #8b4513;
+}
+
+.role {
+  color: #777;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+}
+
+/* 🔹 Mentor Section */
+.mentors {
+  max-width: 1100px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.mentors h2 {
+  font-size: 2rem;
+  color: #8b4513;
+  margin-bottom: 40px;
+}
+
+.mentor-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.mentor-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  width: 480px;
+  padding: 20px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.mentor-box:hover {
+  transform: translateY(-6px);
+}
+
+/* 🔹 Mentor Photo - Specific styling */
+.mentor-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  margin-right: 20px;
+  border: 3px solid #8b4513;
+  flex-shrink: 0;
+}
+
+.mentor-box h3 {
+  font-size: 1.2rem;
+  color: #8b4513;
+  margin-bottom: 5px;
+}
+
+.mentor-box p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.mentor-box .role {
+  color: #777;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+/* 🔹 Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔹 Responsive */
+@media (max-width: 768px) {
+  .banner-text h1 {
+    font-size: 2rem;
+  }
+
+  .banner-text p {
+    font-size: 1rem;
+  }
+
+  .project-overview {
+    padding: 25px;
+  }
+
+  .developer-grid,
+  .mentor-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mentor-box {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mentor-photo {
+    margin: 0 0 15px 0;
+  }
+}

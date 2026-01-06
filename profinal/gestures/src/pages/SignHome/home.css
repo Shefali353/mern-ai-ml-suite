@@ -1,0 +1,357 @@
+/* ===== Gradient Background (Smooth Pastel) ===== */
+.mood-main {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #fff3b0, #d4e0ff, #b3e0ff);
+  background-size: 200% 200%;
+  animation: softWave 15s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding-top: 80px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Subtle motion for the gradient */
+@keyframes softWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  margin-bottom: 100px;
+}
+
+.hero-section h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* 🔥 Better readability */
+.hero-section p {
+  font-size: 22px;
+  max-width: 600px;
+  margin: 0 auto 25px;
+  color: #f8ffff;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.hero-btn {
+  padding: 12px 30px;
+  background-color: #fff;
+  color: #4a6cf7;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+  background-color: #f7f9ff;
+}
+
+/* ===== Discover Your Vibe Section ===== */
+.mood-section {
+  background-color: #ffffffee;
+  border-radius: 20px;
+  padding: 50px 20px;
+  width: 85%;
+  max-width: 1200px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 80px;
+}
+
+.mood-section h2 {
+  font-size: 36px;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.mood-section p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 35px;
+}
+
+/* ===== Card Container ===== */
+.mood-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+}
+
+.mood-card-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== Individual Card ===== */
+.mood-card {
+  background: linear-gradient(180deg, #ffffff, #f9fbff);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 260px;
+  min-width: 260px;
+  padding: 28px 20px;
+  transition: all 0.3s ease;
+}
+
+.mood-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Icon + Text ===== */
+.mood-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.mood-card h3 {
+  font-size: 19px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.mood-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===== Future Scope Section ===== */
+.future-scope-section {
+  background: linear-gradient(180deg, #ffffff, #f7f9ff);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1200px;
+
+  /* Increased top padding for proper spacing */
+  padding: 80px 40px 60px 40px;
+
+  margin: 70px auto 100px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+
+/* Center heading properly above text & image */
+.color-heading {
+  font-size: 55px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+  display: block;
+  color: #fff;
+  background: radial-gradient(circle at 20% 30%, #ff007f, #ffbf00, #00ffea, #8a2be2, #ff007f);
+  background-size: 250% 250%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bubbleFlow 6s ease-in-out infinite;
+  text-shadow:
+    3px 3px 0 #5c13b8,
+    6px 6px 15px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  position: relative;
+  top: -20px; /* 🔥 Moves heading slightly up so it’s perfectly visible */
+}
+
+/* Future content layout */
+.future-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px; /* Keeps text & image slightly below heading */
+}
+
+
+.future-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.future-text p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.future-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.future-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.future-image img:hover {
+  transform: scale(1.03);
+}
+
+.color-heading {
+  font-size: 55px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap; /* ✅ stops breaking into multiple lines */
+  letter-spacing: 4px;
+  margin: 0 auto 40px auto;
+  display: block;
+  color: #fff;
+  background: radial-gradient(circle at 20% 30%, #ff007f, #ffbf00, #00ffea, #8a2be2, #ff007f);
+  background-size: 250% 250%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bubbleFlow 6s ease-in-out infinite;
+  text-shadow:
+    3px 3px 0 #5c13b8,
+    6px 6px 15px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.6);
+}
+
+
+@keyframes bubbleFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .future-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .future-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .color-heading {
+    font-size: 50px;
+    letter-spacing: 2px;
+  }
+}
+
+/* =============================
+   HAMBURGER MENU STYLES
+============================= */
+.hamburger-menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #514949;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-icon.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+.menu-content {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.menu-content.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu-content a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.menu-content a:hover {
+  background: #f5f5f5;
+}
